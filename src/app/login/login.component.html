@@ -1,1 +1,61 @@
 <app-header></app-header>
+<div class="login-container">
+  <div class="login-form">
+    <div class="welcome-text">Welcome</div>
+    <div class="instruction-container">
+      Please enter your Email and password below to login.
+    </div>
+    <div class="login-cred-container">
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-container">
+          <div class="email-container">
+            <label for="email">Email</label>
+            <input
+              class="input-box"
+              type="email"
+              formControlName="email"
+              placeholder="Enter your email"
+              [ngClass]="{'border-red':email?.invalid && (email?.dirty || email?.touched)}" required
+            />
+          </div>
+          <div class="password-container">
+            <label for="password">Password</label>
+            <input
+              class="input-box"
+              type="password"
+              formControlName="password"
+              placeholder="Enter your password"
+            />
+          </div>
+        </div>
+        <div class="reminder-text">
+          <input type="checkbox" formControlName="remember-text" />
+          <span> Remember Me</span>
+        </div>
+    
+        <button class="submit-button" type="submit"
+        (click)="onSubmit()">Login</button>
+      </form>
+    </div>
+    <div class="forgot-password-text">
+        Forgot your <a>password</a>?
+    </div>
+    <div class=" contact-details">
+        <div>If you forgot your registered Email, contact us at 0818 81 81 81</div>
+        <div>To resend Validation Email <a>click here</a>.</div>
+    </div>
+    <div class="dont-have-text">
+       <div> Don't have an account?</div>
+        <div>
+            When you register for Horizon Portal, you'll have access to update your personal <br>
+            information, view your mortgage accounts, transaction history, make payments <br>
+            and complete forms.
+        </div>
+    </div>
+
+  </div>
+  <div class="cover-page-image">
+    <img src="assets/images/city.png" />
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,7 +1,25 @@
-.footer {
-    position: fixed;
-    bottom: 0%;
-    padding: 25px 30px;
-    background-color: red;
-    width: 100%;
+@import '../../../assets/styles/variable.scss';
+@import '../../../assets/styles/mixins.scss';
+
+.footer-section{
+        position: fixed;
+        bottom: 0%;
+        background-color: $dark-red;
+        width: 100%;
+    .footer {
+        padding: 25px 30px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+
+        .copyright-section{
+            color: $white;
+            font-family: 'Halis R', sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+        }
+    }
+
 }

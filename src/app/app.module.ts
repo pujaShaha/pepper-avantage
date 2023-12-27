@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UiComponentsModule } from './ui-components/ui-components.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { UiComponentsModule } from './ui-components/ui-components.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UiComponentsModule
+    UiComponentsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
