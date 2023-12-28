@@ -1,0 +1,48 @@
+<div class="form-container">
+    <app-header></app-header>
+    <div class="header-section">
+        <div class="back-btn" (click)="navigateToHomePage()">
+            <img src="assets/icons/back.svg"> <span> Back</span>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="form-title">New Property</div>
+        <div class="sub-title">Please complete the form below to add new property</div>
+        <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()" class="form">
+            <div class="image-container">
+                <label>Amount <span>*</span></label>
+                <input  type="file" (change)="onFileChange($event)" accept="image/*" formControlName="image">
+                <button type="submit" (click)="uploadImage()" class="upload-btn">Upload</button>
+            </div>
+            <div class="amount-category-container">
+                <div class="fields-container">
+                    <label>Amount <span>*</span></label>
+                    <input  class="input-box"formControlName="email" placeholder="Enter amount">
+                </div>
+                <div class="fields-container">
+                    <label>Category <span>*</span></label>
+                    <select id="selectOption" class="category-dropdown">
+                        <option value="house">House</option>
+                        <option value="flat">Flat</option>
+                      </select>
+                </div>
+            </div>
+            <div class="feedback-status-container">
+                <div class="fields-container">
+                    <label>Feedback <span>*</span></label>
+                    <div class="feedback-stars">Starts here</div>
+                </div>
+                <div class="fields-container">
+                    <label>Status <span>*</span></label>
+                    <select id="selectOption" class="category-dropdown">
+                        <option value="available">Available</option>
+                        <option value="sold">Sold</option>
+                        <option value="under-offer">Under Offer</option>
+                      </select>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <app-footer></app-footer>
+</div>

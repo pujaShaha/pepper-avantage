@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="home-page-container">
+    <div class="content-wrapper">
+        <div class="home-header-section">
+            <div class="username">Hello <span>Username</span></div>
+            <div>
+                <button class="add-btn" (click)="addNewProperty()">
+                    Add Property 
+                    <img src="assets/icons/plus-square.svg">
+                </button>
+            </div>
+        </div>
+       <table>
+        <thead>
+            <tr>
+                <th>Posted Data</th>
+                <th>Image</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Reviews</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let property of propertyInformation">
+                <td>{{property?.postedDate}}</td>
+                <td><img src="{{property?.image}}"></td>
+                <td>{{property?.amount}}</td>
+                <td>{{property?.category}}</td>
+                <td>{{property?.reviews}}</td>
+                <td>{{property?.status}}</td>
+                <td class="editBtn" (click)="editPropertyDetails(property)"><img src="assets/icons/edit.svg"></td>
+            </tr>
+        </tbody>
+       </table> 
+    </div>
+</div>
+<app-footer></app-footer>

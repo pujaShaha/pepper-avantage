@@ -1,6 +1,8 @@
 .login-container {
-    display: flex;
-    padding: 100px 25px 25px 25px;
+    // display: flex;
+    // padding: 100px 25px 25px 25px;
+    display: grid;
+    grid-template-columns: 2fr 6fr 1fr;
 
         .login-form {
             display: flex;

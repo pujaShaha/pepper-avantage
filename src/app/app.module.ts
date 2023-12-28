@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UiComponentsModule } from './ui-components/ui-components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
+import { PropertyFormComponent } from './property-form/property-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomePageComponent,
+    PropertyFormComponent
   ],
   imports: [
     BrowserModule,

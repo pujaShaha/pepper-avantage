@@ -1,0 +1,87 @@
+.home-page-container {
+   padding: 100px 300px 0px;
+
+   .content-wrapper{
+        height: calc(100vh - 280px);
+        overflow-y: auto;
+    .home-header-section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 60px;
+
+        .username{
+            color: var(--Dark-Blue, #002841);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: 'Halis R', sans-serif;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 42px;
+
+            span{
+                color: var(--Pepper-RED, #DF0024);
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: Halis R;
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 42px;
+            }
+        }
+
+        .add-btn {
+            cursor: pointer;
+            color: var(--White, #FFF);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Halis R;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+            display: flex;
+            width: 323px;
+            height: 60px;
+            padding: 0px 30px;
+            align-items: center;
+            gap: 30px;
+            border-radius: 30px;
+            background: var(--Dark-Blue, #002841);
+            justify-content: space-between;
+        }
+    }
+    
+       table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        thead {
+            background: rgba(0, 40, 65, 0.10);
+            th {
+                text-align: left;
+                padding: 10px 10px;
+                border: 1px solid var(--Grey, #D1D3D4);
+                color: var(--Dark-Blue, #002841);
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: 'Halis R', sans-serif;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 24px;
+            }
+        }
+        tbody{
+            td {
+                padding: 10px;
+                border: 1px solid var(--Grey, #D1D3D4);
+            }
+
+            .editBtn{
+                cursor: pointer;
+            }
+        }
+       }
+   }
+
+
+}

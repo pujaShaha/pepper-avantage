@@ -1,0 +1,129 @@
+.form-container {
+    .header-section{
+        .back-btn{
+            padding: 30px 250px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+        }
+    }
+    .form-container{
+        padding: 100px 250px 0px;
+        display: flex;
+        justify-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .form-title{
+            color: var(--Pepper-RED, #DF0024);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: 'Halis R', sans-serif;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 28px;
+        }
+
+        .sub-title{
+            color: var(--Blue, #002841);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: 'Halis R', sans-serif;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px; 
+        }
+
+        .image-container{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .amount-category-container, .feedback-status-container{
+            display: flex;
+            column-gap: 30px;
+        }
+
+        .fields-container{
+            display: flex;
+            flex-direction: column;
+
+            label{
+                color: var(--Dark-Blue, #002841);
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: 'Halis R', sans-serif;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 20px; 
+                span{
+                    color: var(--Pepper-RED, #DF0024);
+                    font-feature-settings: 'clig' off, 'liga' off;
+                    font-family: 'Halis R', sans-serif;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 20px;
+                }
+            }
+
+            input{
+                display: flex;
+                height: 50px;
+                padding: 0px 20px;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+                border-radius: 20px;
+                border: 1px solid var(--Grey-400, #BDBDBD);
+                background: var(--White, #FFF);
+                min-width: 500px;
+            }
+
+            select {
+                display: flex;
+                height: 50px;
+                padding: 0px 20px;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+                border-radius: 20px;
+                border: 1px solid var(--Grey-400, #BDBDBD);
+                background: var(--White, #FFF);
+                min-width: 500px;
+            }
+
+            .feedback-stars{
+                min-width: 500px;
+                padding: 20px;
+            }
+        }
+
+        .submit-btn, .upload-btn {
+            display: flex;
+            width: 323px;
+            height: 60px;
+            padding: 0px 30px;
+            align-items: center;
+            gap: 30px;
+            border-radius: 30px;
+            background: var(--Dark-Blue, #002841);
+            color: var(--White, #FFF);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Halis R;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+        }
+    }
+}

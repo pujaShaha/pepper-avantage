@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CONSTANTS } from '../constants/pepper-advantage-constants';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +14,17 @@ export class LoginComponent implements OnInit{
 
   constructor(
     private formBuilder: FormBuilder,
-    private _router: Router
-  ){}
+    private _router: Router,
+    private _commonService: CommonService
+  ){
+    if (
+      sessionStorage.getItem('email') &&
+      sessionStorage.getItem('password')
+    ) {
+      sessionStorage.removeItem('email');
+      sessionStorage.removeItem('password');
+    }
+  }
 
   get email() {
     return this.loginForm.get('email');
@@ -25,14 +36,17 @@ export class LoginComponent implements OnInit{
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]],
+      rememberMe: new FormControl(false)
     });
   }
 
   onSubmit(){
     if (this.loginForm.valid) {
-      console.log('')
+      this._commonService.authenticateUser(this.loginForm.value)
+        ? this._router.navigateByUrl(CONSTANTS.home): ''
+    } else {
     }
   }
 
