@@ -1,38 +1,28 @@
+@import '../../assets/styles/variable.scss';
+@import '../../assets/styles/mixins.scss';
+
 .login-container {
-    // display: flex;
-    // padding: 100px 25px 25px 25px;
+    padding-top: 100px;
     display: grid;
     grid-template-columns: 2fr 6fr 1fr;
 
         .login-form {
             display: flex;
-            // width: 1150px;
-            // padding: 0px 360px 60px 360px;
-            // padding: 25px;
+            padding-bottom: 30px;
             flex-direction: column;
-            justify-content: center;
+            justify-content: start;
             align-items: flex-start;
             gap: 30px;
     
             .welcome-text{
-                color: var(--Pepper-RED, #DF0024);
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-family: 'Halis R', sans-serif;
-                font-size: 22px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 28px;
+                @include large-text;
                 gap: 30px;
             }
     
             .instruction-container {
-                color: var(--Blue, #002841);
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-family:  'Halis R', sans-serif;
-                font-size: 18px;
-                font-style: normal;
+                @include medium-text;
+                color: $dark-blue;
                 font-weight: 400;
-                line-height: 24px; 
             }
     
             .input-container{
@@ -47,13 +37,10 @@
                     flex: 1 0 0;
     
                     label {
-                        color: var(--Dark-Blue, #002841);
-                        font-feature-settings: 'clig' off, 'liga' off;
-                        font-family: 'Halis R', sans-serif;
-                        font-size: 14px;
-                        font-style: normal;
-                        font-weight: 700;
-                        line-height: 20px;
+                        @include small-text;
+                        color: $dark-blue;
+                        display: flex;
+                        gap: 8px;
                     }
     
                     input {
@@ -66,6 +53,7 @@
                         border-radius: 20px;
                         border: 1px solid var(--Grey-300, #E0E0E0);
                         background: var(--White, #FFF);
+                        min-width: 260px;
                     }
                 }
             }
@@ -78,18 +66,15 @@
                 width: 20px;
                }
                span {
-                color: var(--Blue, #002841);
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-family: 'Halis R', sans-serif;
-                font-size: 18px;
-                font-style: normal;
+                @include medium-text;
+                color: $dark-blue;
                 font-weight: 400;
-                line-height: 24px; 
                }
     
             }
     
             .submit-button{
+                @include medium-text;
                 cursor: pointer;
                 display: flex;
                 width: 323px;
@@ -99,58 +84,77 @@
                 gap: 30px;
                 border-radius: 30px;
                 background: var(--Dark-Blue, #002841);
-                color: var(--White, #FFF);
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-family: 'Halis R', sans-serif;
-                font-size: 18px;
-                font-style: normal;
+                color: $white;
                 font-weight: 700;
-                line-height: 24px;
             }
 
             .forgot-password-text{
-                color: var(--Blue, #002841);
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-family: 'Halis R', sans-serif;
-                font-size: 18px;
-                font-style: normal;
+                @include medium-text;
+                color: $dark-blue;
                 font-weight: 400;
-                line-height: 24px;
-
+                margin-bottom: 30px;
                 a {
+                    @include medium-text;
                     cursor: pointer;
-                    color: var(--Pepper-RED, #DF0024);
-                    font-feature-settings: 'clig' off, 'liga' off;
-                    font-family: 'Halis R', sans-serif;
-                    font-size: 18px;
-                    font-style: normal;
+                    color: $dark-red;
                     font-weight: 400;
-                    line-height: 24px;
                     text-decoration-line: underline;
                 }
             }
 
             .contact-details{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 30px;
                 a {
+                    @include medium-text;
                     cursor: pointer;
-                    color: var(--Pepper-RED, #DF0024);
-                    font-feature-settings: 'clig' off, 'liga' off;
-                    font-family: 'Halis R', sans-serif;
-                    font-size: 18px;
-                    font-style: normal;
+                    color: $dark-red;
                     font-weight: 400;
-                    line-height: 24px;
                     text-decoration-line: underline;
                 }
             }
+
+            .register-account-wrapper{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .title{
+                    @include large-text;
+                    color: $dark-blue;
+                }
+
+                .discription{
+                    @include medium-text;
+                    color: $dark-blue;
+                    font-weight: 400px;
+                }
+
+                .register-button {
+                    @include medium-text;
+                    display: flex;
+                    width: 323px;
+                    height: 60px;
+                    padding: 0px 30px;
+                    align-items: center;
+                    gap: 30px;
+                    border-radius: 30px;
+                    background: var(--Purple, #411941);
+                    color: $white;
+                    font-weight: 700;
+                    justify-content: space-between;
+                }
+            }
+
+
     }
   
     .cover-page-image{
         display: flex;
         flex-direction: column;
-        padding: 30px 0px 30px 30px;
+        padding: 0px 0px 30px 30px;
         align-items: flex-end;
-        // flex: 1 0 0;
-        //align-self: stretch;
     }
 }

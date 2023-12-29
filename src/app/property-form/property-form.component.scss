@@ -1,3 +1,6 @@
+@import '../../assets/styles/variable.scss';
+@import '../../assets/styles/mixins.scss';
+
 .form-container {
     .header-section{
         .back-btn{
@@ -23,23 +26,13 @@
         }
 
         .form-title{
-            color: var(--Pepper-RED, #DF0024);
-            font-feature-settings: 'clig' off, 'liga' off;
-            font-family: 'Halis R', sans-serif;
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 28px;
+            @include large-text;
         }
 
         .sub-title{
-            color: var(--Blue, #002841);
-            font-feature-settings: 'clig' off, 'liga' off;
-            font-family: 'Halis R', sans-serif;
-            font-size: 18px;
-            font-style: normal;
+            @include medium-text;
+            color: $dark-blue;
             font-weight: 400;
-            line-height: 24px; 
         }
 
         .image-container{
@@ -58,21 +51,11 @@
             flex-direction: column;
 
             label{
-                color: var(--Dark-Blue, #002841);
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-family: 'Halis R', sans-serif;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 20px; 
+                @include small-text;
+                color: $dark-blue;
                 span{
-                    color: var(--Pepper-RED, #DF0024);
-                    font-feature-settings: 'clig' off, 'liga' off;
-                    font-family: 'Halis R', sans-serif;
-                    font-size: 14px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 20px;
+                    @include small-text;
+                    color:$dark-red;
                 }
             }
 
@@ -109,6 +92,7 @@
         }
 
         .submit-btn, .upload-btn {
+            @include medium-text;
             display: flex;
             width: 323px;
             height: 60px;
@@ -117,13 +101,8 @@
             gap: 30px;
             border-radius: 30px;
             background: var(--Dark-Blue, #002841);
-            color: var(--White, #FFF);
-            font-feature-settings: 'clig' off, 'liga' off;
-            font-family: Halis R;
-            font-size: 18px;
-            font-style: normal;
+            color: $white;
             font-weight: 700;
-            line-height: 24px;
         }
     }
 }

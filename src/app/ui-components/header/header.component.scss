@@ -1,48 +1,25 @@
-// .header {
-//     position: fixed;
-//     top: 0px;
-//     background: #FFFFFF;
-//     width: 100%;
-//     padding: 25px 30px;
-//     box-shadow: 0px 4px 20px 0px #00000040;
-//     display: flex;
-//     justify-content: space-between;
-
-//     .project-title{
-//         font-family: Halis R;
-//         font-size: 25px;
-//         font-weight: 700;
-//         line-height: 25px;
-//         letter-spacing: -1px;
-//         text-align: left;
-//         color: #002841;
-//     }
-
-//     .brand-name{
-        
-//     }
-// }
-// @import '../../assets/styles/variable.scss';
-// @import '../../assets/styles/mixins.scss';
-
 @import '../../../assets/styles/variable.scss';
 @import '../../../assets/styles/mixins.scss';
 
 .header-section {
-    width: 100%;
-    flex-shrink: 0;
+    // width: 100%;
+    // flex-shrink: 0;
     border-bottom: $border-line;
     background: $white;
     display: flex;
     box-shadow: 0px 4px 20px 0px #00000040;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 48px;
+    background: var(--white);
 
-    .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 8px;
-        width: 100%;
-        padding: 25px 30px;
+    // .header {
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: space-between;
+        // gap: 8px;
+        // // width: 100%;
+        // padding: 25px 30px;
 
         .project-title{
             font-family: 'Halis R', sans-serif;
@@ -56,5 +33,5 @@
             font-style: normal;
 
         }
-    }
+    // }
 }

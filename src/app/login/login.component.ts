@@ -45,8 +45,15 @@ export class LoginComponent implements OnInit{
   onSubmit(){
     if (this.loginForm.valid) {
       this._commonService.authenticateUser(this.loginForm.value)
-        ? this._router.navigateByUrl(CONSTANTS.home): ''
+        ? this._router.navigateByUrl(CONSTANTS.home): this._commonService.openSnackBar(
+          'Please enter valid Email and Password',
+          'close'
+        );
     } else {
+      this._commonService.openSnackBar(
+        'Please enter valid Email and Password!!!',
+        'close'
+      );
     }
   }
 

@@ -15,20 +15,26 @@
         >
           <div class="input-container">
             <div class="email-container">
-              <label for="email">Email</label>
+              <label for="email">Email <img  *ngIf="email?.valid" src="assets/icons/done.svg"></label>
               <input
                 class="input-box"
                 formControlName="email"
                 placeholder="Enter your email"
+                [ngClass]="{
+                  'border-red':email?.invalid && (email?.dirty || email?.touched)
+              }" required
               />
             </div>
             <div class="password-container">
-              <label for="password">Password</label>
+              <label for="password">Password <img  *ngIf="password?.valid" src="assets/icons/done.svg"></label>
               <input
                 class="input-box"
                 type="password"
                 formControlName="password"
                 placeholder="Enter your password"
+                [ngClass]="{
+                  'border-red': password?.invalid && (password?.dirty || password?.touched)
+              }" required
               />
             </div>
           </div>
@@ -49,15 +55,18 @@
         </div>
         <div>To resend Validation Email <a>click here</a>.</div>
       </div>
-      <div class="dont-have-text">
-        <div>Don't have an account?</div>
-        <div>
+      <div class="register-account-wrapper">
+        <div class="title">Don't have an account?</div>
+        <div class="discription">
           When you register for Horizon Portal, you'll have access to update
           your personal <br />
           information, view your mortgage accounts, transaction history, make
           payments <br />
           and complete forms.
         </div>
+        <button class="register-button" type="submit" (click)="onSubmit()">
+          Register  <img src="assets/icons/register.svg">
+        </button>
       </div>
     </div>
     <div class="cover-page-image">

@@ -8,6 +8,8 @@ import { UiComponentsModule } from './ui-components/ui-components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PropertyFormComponent } from './property-form/property-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { PropertyFormComponent } from './property-form/property-form.component';
     AppRoutingModule,
     UiComponentsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,7 @@
+@import '../../assets/styles/variable.scss';
+@import '../../assets/styles/mixins.scss';
+
+
 .home-page-container {
    padding: 100px 300px 0px;
 
@@ -11,34 +15,20 @@
         padding-bottom: 60px;
 
         .username{
-            color: var(--Dark-Blue, #002841);
-            font-feature-settings: 'clig' off, 'liga' off;
-            font-family: 'Halis R', sans-serif;
-            font-size: 36px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 42px;
-
+            @include extra-large-text ;
+            color: $dark-blue;
             span{
-                color: var(--Pepper-RED, #DF0024);
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-family: Halis R;
-                font-size: 36px;
-                font-style: normal;
+                @include extra-large-text ;
+                color: $dark-red;
                 font-weight: 700;
-                line-height: 42px;
             }
         }
 
         .add-btn {
+            @include medium-text ;
             cursor: pointer;
-            color: var(--White, #FFF);
-            font-feature-settings: 'clig' off, 'liga' off;
-            font-family: Halis R;
-            font-size: 18px;
-            font-style: normal;
+            color: $white;
             font-weight: 700;
-            line-height: 24px;
             display: flex;
             width: 323px;
             height: 60px;
@@ -58,16 +48,12 @@
         thead {
             background: rgba(0, 40, 65, 0.10);
             th {
+                @include medium-text;
                 text-align: left;
                 padding: 10px 10px;
                 border: 1px solid var(--Grey, #D1D3D4);
-                color: var(--Dark-Blue, #002841);
-                font-feature-settings: 'clig' off, 'liga' off;
-                font-family: 'Halis R', sans-serif;
-                font-size: 18px;
-                font-style: normal;
+                color: $dark-blue;
                 font-weight: 700;
-                line-height: 24px;
             }
         }
         tbody{
