@@ -2,23 +2,51 @@
 @import '../../../assets/styles/mixins.scss';
 
 .footer-section{
-        position: fixed;
-        bottom: 0%;
-        background-color: $dark-red;
-        width: 100%;
-    .footer {
-        padding: 25px 30px;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
+    position: fixed;
+    bottom: 0%;
+    background-color: $dark-red;
+    width: 100%;
 
-        .copyright-section{
-            color: $white;
-            font-family: 'Halis R', sans-serif;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 20px;
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 30px;
+        gap: 40px;
+        .page-link-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 98px;
+    
+            a {
+                @include medium-text;
+                color: $white;
+                font-weight: 400;
+                text-decoration-line: underline; 
+            }
+        }
+
+        .seperator{
+            border-top: 1px solid $white;
+            position: relative;
+            width: 70%;
+            left: 15%;
+            opacity: 0.5;
+        }
+    
+        .footer {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+    
+            .copyright-section{
+                color: $white;
+                font-family: 'Halis R', sans-serif;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+            }
         }
     }
 

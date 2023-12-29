@@ -1,12 +1,31 @@
 <div class="footer-section">
-    <div class="footer">
-        <div class="brand-name">
-            <img src="assets/images/logo-white.png">
+    <div class="footer-container">
+        <div class="page-link-container" *ngIf="isHomeScreen">
+            <a>Home</a>
+            <a>Transactions</a>
+            <a>Payments</a>
+            <a>Mailbox</a>
+            <a>Documents</a>
+            <a>Contact Us</a>
+            <a>Profile</a>
         </div>
-        <div class="copyright-section">
-            Copyright © Pepper Advantage Technologies Limited 2023. Pepper Advantage is the trading name of Pepper Advantage Technologies Limited. Company 
-            <br> Number 13572732. Registered Office: Third Floor, East Suite, Carrington House, 126-130 Regent Street, London, England, W1B 5SE.
-
+        <div class="seperator" *ngIf="isHomeScreen"></div>
+        <div class="page-link-container" *ngIf="isHomeScreen">
+            <a>Terms & Conditions</a>
+            <a>Privacy Policy</a>
+            <a>Terms of Business</a>
+            <a>FAQ</a>
+        </div>
+        <div class="seperator" *ngIf="isHomeScreen"></div>
+        <div class="footer">
+            <div class="brand-name">
+                <img src="assets/images/logo-white.png">
+            </div>
+            <div class="copyright-section">
+                Copyright © Pepper Advantage Technologies Limited 2023. Pepper Advantage is the trading name of Pepper Advantage Technologies Limited. Company 
+                <br> Number 13572732. Registered Office: Third Floor, East Suite, Carrington House, 126-130 Regent Street, London, England, W1B 5SE.
+    
+            </div>
         </div>
     </div>
 </div>

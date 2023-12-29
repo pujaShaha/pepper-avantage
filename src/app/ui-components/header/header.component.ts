@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   isUserLoggedIn = false;
+  userName = sessionStorage.getItem('userName');
 
   constructor(private _router: Router){}
 

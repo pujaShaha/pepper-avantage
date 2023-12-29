@@ -6,12 +6,25 @@
         </div>
     </div>
     <div class="form-container">
-        <div class="form-title">New Property</div>
-        <div class="sub-title">Please complete the form below to add new property</div>
         <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()" class="form">
+            <div class="form-title">New Property</div>
+            <div class="sub-title">Please complete the form below to add new property</div>
             <div class="image-container">
-                <label>Amount <span>*</span></label>
-                <input  type="file" (change)="onFileChange($event)" accept="image/*" formControlName="image">
+                <label>Image <span>*</span></label>
+              
+                <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                    <ngx-dropzone-label>
+                        <div>
+                            <h2>Drag and drop image here</h2>
+                        </div>
+                    </ngx-dropzone-label>
+                    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                    </ngx-dropzone-image-preview>
+                </div>
+              
+              
+                <!-- <input  type="file" (change)="onFileChange($event)" accept="image/*" formControlName="image"> -->
                 <button type="submit" (click)="uploadImage()" class="upload-btn">Upload</button>
             </div>
             <div class="amount-category-container">

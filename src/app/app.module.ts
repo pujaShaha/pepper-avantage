@@ -10,6 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PropertyFormComponent } from './property-form/property-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]

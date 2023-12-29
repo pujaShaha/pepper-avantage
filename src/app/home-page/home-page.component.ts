@@ -10,6 +10,7 @@ import { Properties } from '../models/property-model';
 })
 export class HomePageComponent implements OnInit {
   propertyInformation! : Properties[] | any;
+  userName = sessionStorage.getItem('userName');
 
   constructor(
     private _commonService: CommonService,

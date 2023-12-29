@@ -65,6 +65,10 @@
                 height: 20px;
                 width: 20px;
                }
+               input[type=checkbox] {
+                accent-color: $white;
+                mix-blend-mode: $dark-red;
+               }
                span {
                 @include medium-text;
                 color: $dark-blue;

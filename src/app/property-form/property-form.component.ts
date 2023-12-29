@@ -41,4 +41,16 @@ onFileChange(event: any) {
 uploadImage() {
   console.log('inside upload function');
 }
+
+files: File[] = [];
+
+	onSelect(event: any) {
+		console.log(event);
+		this.files.push(...event.addedFiles);
+	}
+
+	onRemove(event: any) {
+		console.log(event);
+		this.files.splice(this.files.indexOf(event), 1);
+	}
 }

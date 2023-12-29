@@ -28,6 +28,7 @@ export class CommonService {
     ) {
       sessionStorage.setItem('email', loginForm.email);
       sessionStorage.setItem('password', loginForm.password);
+      sessionStorage.setItem('userName', CONSTANTS.userName);
       return true;
     } else {
       return false;

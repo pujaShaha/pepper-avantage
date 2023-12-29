@@ -34,15 +34,10 @@ $pepperAssignment-theme: mat.define-light-theme((
 @include mat.all-component-themes($pepperAssignment-theme);
 
 /* You can add global styles to this file, and also import other style files */
-body {
-    margin: 0px;
-    font-family: 'Halis R', sans-serif;
-}
-// html, body { height: 100%; }
-// body { margin: 0; font-family: 'Halis R', sans-serif; }
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Halis R', sans-serif; }
 
 .border-red {
 	border: 1px solid #da1e28 !important;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
