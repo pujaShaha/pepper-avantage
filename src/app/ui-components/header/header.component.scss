@@ -31,7 +31,41 @@
             text-align: left;
             color: $dark-blue;
             font-style: normal;
-
         }
-    // }
+
+        .pages {
+            display: flex;
+            gap: 60px;
+            flex: 0 0 auto;
+            a {
+                @include medium-text;
+                color: $dark-blue;
+                font-weight: 700;
+            }
+        }
+
+        .user-details-wrapper{
+            display: flex;
+            gap: 30px;
+            
+            .chat-section{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                span{
+                    @include medium-text;
+                    color: $dark-blue;
+                    font-weight: 500;
+                }
+            }
+            .user-info {
+                display: flex;
+                gap: 20px;
+
+                img{
+                    border-radius: 50px;
+                }
+            }
+        }
 }

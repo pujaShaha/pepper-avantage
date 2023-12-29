@@ -10,30 +10,37 @@
                 </button>
             </div>
         </div>
-       <table>
-        <thead>
-            <tr>
-                <th>Posted Data</th>
-                <th>Image</th>
-                <th>Amount</th>
-                <th>Category</th>
-                <th>Reviews</th>
-                <th>Status</th>
-                <th>Edit</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let property of propertyInformation">
-                <td>{{property?.postedDate}}</td>
-                <td><img src="{{property?.image}}"></td>
-                <td>{{property?.amount}}</td>
-                <td>{{property?.category}}</td>
-                <td>{{property?.reviews}}</td>
-                <td>{{property?.status}}</td>
-                <td class="editBtn" (click)="editPropertyDetails(property)"><img src="assets/icons/edit.svg"></td>
-            </tr>
-        </tbody>
-       </table> 
+       <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Posted Data</th>
+                    <th>Image</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Reviews</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let property of propertyInformation">
+                    <td>{{property?.postedDate}}</td>
+                    <td class="property-image"><img src="{{property?.image}}"></td>
+                    <td>{{property?.amount}}</td>
+                    <td>{{property?.category | titlecase}}</td>
+                    <!-- <td>{{property?.reviews}}</td> -->
+                    <td  class="rating">
+                        <app-rating-star [starCount]="property?.reviews"></app-rating-star>
+                    </td>
+                    <td >
+                        <div class="status" [ngClass]="property?.status === 'available' ? 'available': property?.status === 'sold' ? 'sold' : 'under-offer'">{{property?.status | titlecase}}</div>
+                    </td>
+                    <td class="editBtn" (click)="editPropertyDetails(property)"><img src="assets/icons/edit.svg"></td>
+                </tr>
+            </tbody>
+           </table> 
+       </div>
     </div>
 </div>
 <app-footer></app-footer>

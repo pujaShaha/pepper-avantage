@@ -12,8 +12,28 @@
         <div class="project-title">
             Customer <br> Portal
         </div>
-        <div class="brand-name">
+        <div class="pages" *ngIf="isUserLoggedIn">
+            <a>Accounts</a>
+            <a>Properties</a>
+            <a>Payments</a>
+            <a>mailbox</a>
+            <a>My Documents</a>
+            <a>Contact Us</a>
+        </div>
+        <div class="brand-name" *ngIf="!isUserLoggedIn">
             <img src="assets/images/logo.png">
+        </div>
+        <div class="user-details-wrapper" *ngIf="isUserLoggedIn">
+            <img src="assets/icons/notifications.svg">
+            <div class="chat-section"><img src="assets/icons/chat.svg"> <span> Chat</span></div>
+            <div class="user-info">
+               <div>
+                <div>UserName</div>
+                <div>Last Connection:</div>
+                <div>06.07.2023 / 9.26</div>
+               </div>
+               <img src="assets/icons/user-profile.svg">
+            </div>
         </div>
     <!-- </div> -->
 </div>

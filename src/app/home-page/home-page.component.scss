@@ -5,9 +5,9 @@
 .home-page-container {
    padding: 100px 300px 0px;
 
-   .content-wrapper{
+   .content-wrapper {
         height: calc(100vh - 280px);
-        overflow-y: auto;
+        //
     .home-header-section{
         display: flex;
         justify-content: space-between;
@@ -41,32 +41,65 @@
         }
     }
     
-       table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0;
-        thead {
-            background: rgba(0, 40, 65, 0.10);
-            th {
-                @include medium-text;
-                text-align: left;
-                padding: 10px 10px;
-                border: 1px solid var(--Grey, #D1D3D4);
-                color: $dark-blue;
-                font-weight: 700;
+    .table-container{
+        height: calc(100% - 168px);
+        overflow-y: auto;
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            thead {
+                background: rgba(0, 40, 65, 0.10);
+                th {
+                    @include medium-text;
+                    text-align: left;
+                    padding: 10px 10px;
+                    border: 1px solid var(--Grey, #D1D3D4);
+                    color: $dark-blue;
+                    font-weight: 700;
+                }
             }
-        }
-        tbody{
-            td {
-                padding: 10px;
-                border: 1px solid var(--Grey, #D1D3D4);
+            tbody{
+                td {
+                    padding: 10px;
+                    border: 1px solid var(--Grey, #D1D3D4);
+                }
+    
+                .property-image{
+                    width: 14%;
+                }
+    
+                .status{
+                    @include medium-text;
+                    color: $white;
+                    font-weight: 400;  
+                    display: flex;
+                    padding: 10px;
+                    align-items: center;
+                    gap: 10px; 
+                    border-radius: 5px;
+                    display: inline-block;
+                }
+    
+                .available{
+                    background: var(--Green, #058303);
+                }
+                .sold{
+                    background: var(--Negative-RED, #BE020B);
+                }
+                .under-offer{
+                    background: var(--Orange, #ED8B00);
+                }
+                .rating {
+                    width: 18%;
+                }
+    
+                .editBtn{
+                    cursor: pointer;
+                }
             }
-
-            .editBtn{
-                cursor: pointer;
-            }
-        }
-       }
+           }
+    }
    }
 
 

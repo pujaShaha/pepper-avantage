@@ -156,5 +156,9 @@
         flex-direction: column;
         padding: 0px 0px 30px 30px;
         align-items: flex-end;
+        
+        img{
+            height: calc(100% - 34px);
+        }
     }
 }
