@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rating-star',
@@ -12,23 +13,17 @@ export class RatingStarComponent implements OnInit{
 
   ratingArr: Array<number> = [];
 
-  constructor() {}
+  constructor(private _router: Router) {}
 
   ngOnInit() {
-    for (let index = 0; index < this.starCount; index++) {
-      this.ratingArr.push(index);
-    }
+    this.ratingArr = Array(this.starCount).fill(0);
   }
   onClick(rating: number) : boolean {
+    const isUserOnFormModule = this._router.url.includes('property-form');
+    if(isUserOnFormModule) {
+      this.rating = rating;
+    }
     this.ratingUpdated.emit(rating);
     return false;
-  }
-
-  showIcon(index: number) : string {
-    if (this.rating >= index + 1) {
-      return 'star';
-    } else {
-      return 'star_border';
-    }
   }
 }

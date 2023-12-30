@@ -29,9 +29,8 @@
                     <td class="property-image"><img src="{{property?.image}}"></td>
                     <td>{{property?.amount}}</td>
                     <td>{{property?.category | titlecase}}</td>
-                    <!-- <td>{{property?.reviews}}</td> -->
                     <td  class="rating">
-                        <app-rating-star [starCount]="property?.reviews"></app-rating-star>
+                        <app-rating-star [rating]="property?.reviews"></app-rating-star>
                     </td>
                     <td >
                         <div class="status" [ngClass]="property?.status === 'available' ? 'available': property?.status === 'sold' ? 'sold' : 'under-offer'">{{property?.status | titlecase}}</div>
