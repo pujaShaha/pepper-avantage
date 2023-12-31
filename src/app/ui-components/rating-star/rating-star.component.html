@@ -1,3 +1,3 @@
-<mat-icon *ngFor="let icon of ratingArr let index = index" (click)="onClick(index+1)">
+<mat-icon *ngFor="let icon of ratingArr let index = index" (click)="onClick(index+1)" [ngClass]="{'custom-icon-size': isUserOnFormModule}" >
         {{ index < rating ? 'star' : 'star_border' }}
 </mat-icon>

@@ -10,17 +10,19 @@ export class RatingStarComponent implements OnInit{
   @Input() rating: number | any = 0;
   @Input() starCount: number | any = 5;
   @Output() ratingUpdated = new EventEmitter();
+  isUserOnFormModule = false;
 
   ratingArr: Array<number> = [];
 
-  constructor(private _router: Router) {}
+  constructor(private _router: Router) {
+    this.isUserOnFormModule = this._router.url.includes('property-form');
+  }
 
   ngOnInit() {
     this.ratingArr = Array(this.starCount).fill(0);
   }
   onClick(rating: number) : boolean {
-    const isUserOnFormModule = this._router.url.includes('property-form');
-    if(isUserOnFormModule) {
+    if(this.isUserOnFormModule) {
       this.rating = rating;
     }
     this.ratingUpdated.emit(rating);

@@ -26,6 +26,7 @@ export class HomePageComponent implements OnInit {
   getPropertyDetails() {
     this._commonService.propertyInfo$.subscribe((resp:Properties[] )=> {
      if(resp) {
+      console.log('resp: ', resp);
       this.propertyInformation = resp;
      }
     }, 

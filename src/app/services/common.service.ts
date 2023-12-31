@@ -48,5 +48,10 @@ export class CommonService {
     });
   }
 
+  savePropertyData(property: Properties) {
+    this.propertyInfo.push(property);
+    this.properties.next(this.propertyInfo);
+  }
+
 
 }

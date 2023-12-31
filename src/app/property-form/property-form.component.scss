@@ -13,7 +13,7 @@
         }
     }
     .form-container{
-        padding: 100px 250px 0px;
+        padding: 100px 250px 120px;
         align-items: center;
         display: flex;
         justify-items: flex-start;
@@ -113,6 +113,14 @@
             background: var(--Dark-Blue, #002841);
             color: $white;
             font-weight: 700;
+            cursor: pointer;
         }
+
+        .upload-btn:disabled {
+            cursor: auto;
+            background-color: #BDBDBD;
+            border: none;
+        }
+
     }
 }

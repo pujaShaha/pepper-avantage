@@ -1,61 +1,63 @@
 <div class="form-container">
     <app-header></app-header>
-    <div class="header-section">
-        <div class="back-btn" (click)="navigateToHomePage()">
-            <img src="assets/icons/back.svg"> <span> Back</span>
+    <div>
+        <div class="header-section">
+            <div class="back-btn" (click)="navigateToHomePage()">
+                <img src="assets/icons/back.svg"> <span> Back</span>
+            </div>
         </div>
-    </div>
-    <div class="form-container">
-        <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()" class="form">
-            <div class="form-title">New Property</div>
-            <div class="sub-title">Please complete the form below to add new property</div>
-            <div class="image-container">
-                <label>Image <span>*</span></label>
-              
-                <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
-                    <ngx-dropzone-label>
-                        <div>
-                            <h2>Drag and drop image here</h2>
+        <div class="form-container">
+            <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()" class="form">
+                <div class="form-title">New Property</div>
+                <div class="sub-title">Please complete the form below to add new property</div>
+                <div class="image-container">
+                    <label>Image <span>*</span></label>
+                  
+                    <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                        <ngx-dropzone-label>
+                            <div>
+                                <h2>Drag and drop image here</h2>
+                            </div>
+                        </ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-image-preview>
+                    </div>
+                  
+                <button  (click)="uploadImage()" class="upload-btn" [disabled]="!image">Upload</button>
+                </div>
+                <div class="amount-category-container">
+                    <div class="fields-container">
+                        <label>Amount <span>*</span></label>
+                        <input  class="input-box" formControlName="amount" placeholder="Enter amount">
+                    </div>
+                    <div class="fields-container">
+                        <label>Category <span>*</span></label>
+                        <select id="selectOption" class="category-dropdown" formControlName="category">
+                            <option value="house">House</option>
+                            <option value="flat">Flat</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="feedback-status-container">
+                    <div class="fields-container">
+                        <label>Feedback <span>*</span></label>
+                        <div class="feedback-stars">
+                            <app-rating-star [rating]="0" (ratingUpdated)="onRatingChanged($event)"></app-rating-star>
                         </div>
-                    </ngx-dropzone-label>
-                    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
-                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                    </ngx-dropzone-image-preview>
+                    </div>
+                    <div class="fields-container">
+                        <label>Status <span>*</span></label>
+                        <select id="selectOption" class="category-dropdown" formControlName="status">
+                            <option value="available">Available</option>
+                            <option value="sold">Sold</option>
+                            <option value="under-offer">Under Offer</option>
+                          </select>
+                    </div>
                 </div>
-              
-              
-                <!-- <input  type="file" (change)="onFileChange($event)" accept="image/*" formControlName="image"> -->
-                <button type="submit" (click)="uploadImage()" class="upload-btn">Upload</button>
-            </div>
-            <div class="amount-category-container">
-                <div class="fields-container">
-                    <label>Amount <span>*</span></label>
-                    <input  class="input-box"formControlName="email" placeholder="Enter amount">
-                </div>
-                <div class="fields-container">
-                    <label>Category <span>*</span></label>
-                    <select id="selectOption" class="category-dropdown">
-                        <option value="house">House</option>
-                        <option value="flat">Flat</option>
-                      </select>
-                </div>
-            </div>
-            <div class="feedback-status-container">
-                <div class="fields-container">
-                    <label>Feedback <span>*</span></label>
-                    <div class="feedback-stars"><app-rating-star [rating]="0"></app-rating-star></div>
-                </div>
-                <div class="fields-container">
-                    <label>Status <span>*</span></label>
-                    <select id="selectOption" class="category-dropdown">
-                        <option value="available">Available</option>
-                        <option value="sold">Sold</option>
-                        <option value="under-offer">Under Offer</option>
-                      </select>
-                </div>
-            </div>
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
     </div>
     <app-footer></app-footer>
 </div>
