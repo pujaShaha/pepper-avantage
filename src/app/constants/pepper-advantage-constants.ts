@@ -1,6 +1,6 @@
 export const CONSTANTS = {
-    userId: 'puja.shaha@gmail.com',
-    password: 'Puja@0712',
+    userId: 'mig@gmail.com',
+    password: 'Mig@0712',
     userName: 'Miguel',
     home: 'home',
   };

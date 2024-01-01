@@ -2,7 +2,7 @@
 @import '../../assets/styles/mixins.scss';
 
 .login-container {
-    padding-top: 100px;
+    padding: 100px 0px 50px 0px;
     display: grid;
     grid-template-columns: 2fr 6fr 1fr;
 
@@ -51,8 +51,8 @@
                         gap: 10px;
                         align-self: stretch;
                         border-radius: 20px;
-                        border: 1px solid var(--Grey-300, #E0E0E0);
-                        background: var(--White, #FFF);
+                        border: $border-line;
+                        background: $white;
                         min-width: 260px;
                     }
                 }
@@ -87,7 +87,7 @@
                 align-items: center;
                 gap: 30px;
                 border-radius: 30px;
-                background: var(--Dark-Blue, #002841);
+                background: $dark-blue;
                 color: $white;
                 font-weight: 700;
             }
@@ -145,7 +145,7 @@
                     align-items: center;
                     gap: 30px;
                     border-radius: 30px;
-                    background: var(--Purple, #411941);
+                    background: $purple;
                     color: $white;
                     font-weight: 700;
                     justify-content: space-between;

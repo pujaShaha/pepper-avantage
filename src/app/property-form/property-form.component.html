@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="form-container">
-            <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()" class="form">
+            <form [formGroup]="propertyForm" class="form">
                 <div class="form-title">New Property</div>
                 <div class="sub-title">Please complete the form below to add new property</div>
                 <div class="image-container">
@@ -24,7 +24,16 @@
                         </ngx-dropzone-image-preview>
                     </div>
                   
-                <button  (click)="uploadImage()" class="upload-btn" [disabled]="!image">Upload</button>
+                <div class="upload-btn-container">
+                    <button  (click)="uploadImage()" class="upload-btn" [disabled]="!image">Upload</button>
+                    <mat-progress-spinner
+                        *ngIf="isLoading"
+                        mode="indeterminate"
+                        color="accent"
+                        diameter="50"
+                        strokeWidth="4"
+                        ></mat-progress-spinner>
+                </div>
                 </div>
                 <div class="amount-category-container">
                     <div class="fields-container">
@@ -55,7 +64,7 @@
                           </select>
                     </div>
                 </div>
-                <button type="submit" class="submit-btn">Submit</button>
+                <button type="submit" class="submit-btn" (click)="onSubmit()">Submit</button>
             </form>
         </div>
     </div>

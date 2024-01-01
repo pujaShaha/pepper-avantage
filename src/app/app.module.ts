@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { DatePipe } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { DatePipe } from '@angular/common';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    MatProgressSpinnerModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

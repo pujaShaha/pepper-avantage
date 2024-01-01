@@ -21,7 +21,6 @@ export class CommonService {
    * @returns : boolean
    */
    authenticateUser(loginForm: { email: string; password: string }): boolean {
-    console.log('loginForm: ', loginForm);
     if (
       loginForm.email === CONSTANTS.userId &&
       loginForm.password === CONSTANTS.password

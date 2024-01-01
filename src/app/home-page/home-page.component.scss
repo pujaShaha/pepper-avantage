@@ -36,7 +36,7 @@
             align-items: center;
             gap: 30px;
             border-radius: 30px;
-            background: var(--Dark-Blue, #002841);
+            background: $dark-blue;
             justify-content: space-between;
         }
     }
@@ -49,12 +49,12 @@
             border-collapse: separate;
             border-spacing: 0;
             thead {
-                background: rgba(0, 40, 65, 0.10);
+                background: $table-background;
                 th {
                     @include medium-text;
                     text-align: left;
                     padding: 10px 10px;
-                    border: 1px solid var(--Grey, #D1D3D4);
+                    border: $table-border;
                     color: $dark-blue;
                     font-weight: 700;
                 }
@@ -62,11 +62,15 @@
             tbody{
                 td {
                     padding: 10px;
-                    border: 1px solid var(--Grey, #D1D3D4);
+                    border: $table-border;
                 }
     
                 .property-image{
                     width: 14%;
+                    img {
+                        height: 130px;
+                        width: 180px;
+                    }
                 }
     
                 .status{
@@ -82,13 +86,13 @@
                 }
     
                 .available{
-                    background: var(--Green, #058303);
+                    background: $green;
                 }
                 .sold{
-                    background: var(--Negative-RED, #BE020B);
+                    background: $negative-red;
                 }
                 .under-offer{
-                    background: var(--Orange, #ED8B00);
+                    background: $orange;
                 }
                 .rating {
                     width: 18%;

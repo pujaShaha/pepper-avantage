@@ -44,10 +44,10 @@
 
             .custom-dropzone {
                 @include small-text;
-                color: var(--Dark-Grey, #9D9D9D);
+                color: $gray-dark-grey;
                 height: 200px;
                 border-radius: 20px;
-                border: 1px solid var(--Grey-400, #BDBDBD);
+                border: $border-line-1;
             }
         }
 
@@ -77,8 +77,8 @@
                 gap: 10px;
                 align-self: stretch;
                 border-radius: 20px;
-                border: 1px solid var(--Grey-400, #BDBDBD);
-                background: var(--White, #FFF);
+                border: $border-line-1;
+                background: $white;
                 min-width: 500px;
             }
 
@@ -90,8 +90,8 @@
                 gap: 10px;
                 align-self: stretch;
                 border-radius: 20px;
-                border: 1px solid var(--Grey-400, #BDBDBD);
-                background: var(--White, #FFF);
+                border: $border-line-1;
+                background: $white;
                 min-width: 500px;
             }
 
@@ -99,6 +99,11 @@
                 min-width: 500px;
                 padding: 20px;
             }
+        }
+
+        .upload-btn-container{
+            display: flex;
+            gap: 30px
         }
 
         .submit-btn, .upload-btn {
@@ -110,7 +115,7 @@
             align-items: center;
             gap: 30px;
             border-radius: 30px;
-            background: var(--Dark-Blue, #002841);
+            background: $dark-blue;
             color: $white;
             font-weight: 700;
             cursor: pointer;
@@ -118,7 +123,7 @@
 
         .upload-btn:disabled {
             cursor: auto;
-            background-color: #BDBDBD;
+            background-color: $ivory;
             border: none;
         }
 

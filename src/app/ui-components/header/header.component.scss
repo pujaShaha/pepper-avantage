@@ -2,8 +2,6 @@
 @import '../../../assets/styles/mixins.scss';
 
 .header-section {
-    // width: 100%;
-    // flex-shrink: 0;
     border-bottom: $border-line;
     background: $white;
     display: flex;
@@ -12,14 +10,6 @@
     align-items: center;
     padding: 12px 48px;
     background: var(--white);
-
-    // .header {
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: space-between;
-        // gap: 8px;
-        // // width: 100%;
-        // padding: 25px 30px;
 
         .project-title{
             font-family: 'Halis R', sans-serif;

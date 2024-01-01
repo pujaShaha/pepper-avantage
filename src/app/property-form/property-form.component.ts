@@ -16,6 +16,8 @@ export class PropertyFormComponent implements OnInit{
   rating: number = 0;
   image: any;
   files: File[] = [];
+  imageUrl: any;
+  isLoading = false;
 
 constructor(
   private formBuilder: FormBuilder,
@@ -37,17 +39,14 @@ navigateToHomePage() {
 }
 
 onSubmit(){
-  console.log('inside submit form', this.propertyForm);
-
   const currentDate = new Date();
     const formattedDate = this.datePipe.transform(currentDate, 'dd.MM.yyyy');
     if (this.propertyForm?.valid && this.rating >0 && this.files.length) {
       const data = this.propertyForm.value;
-      console.log('data: ', data);
       const newProperty: Properties = {
         postedDate: formattedDate,
-        image: '',
-        amount: data.amount,
+        image: this.imageUrl,
+        amount: '$' + data.amount,
         category:  data.category,
         reviews: this.rating,
         status: data.status,
@@ -67,29 +66,27 @@ onSubmit(){
     }
 }
 
-// onFileChange(event: any) {
-//   this.image = event.targets.files[0];
-//   console.log('image: ', this.image);
-//   console.log('inside file change function', event.targets.files[0]);
-// }
 
 uploadImage() {
-  let formData = new FormData();
-  formData.set('file', this.image);
-  console.log('formData: ', formData);
-  console.log('inside upload function');
+  this.isLoading = true;
+  if(this.image) {
+    setTimeout(() => {
+      const reader = new FileReader();
+      reader.readAsDataURL(this.image);
+      reader.onload = (event: any) => {
+      this.imageUrl = event.target.result;
+      this.isLoading = false;
+      }
+    }, 1000);
+  }
 }
 
 	onSelect(event: any) {
-		console.log(event);
 		this.files.push(...event.addedFiles);
-    console.log('this.files: ', this.files);
-    this.image = event.addedFiles[0];
-    console.log('image: ', this.image);
+    this.image = this.files[0];
 	}
 
 	onRemove(event: any) {
-		console.log(event);
 		this.files.splice(this.files.indexOf(event), 1);
 	}
 

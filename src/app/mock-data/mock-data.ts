@@ -74,7 +74,7 @@ export const propertyDetails = {
         },
         {
             postedDate:'01.09.2023',
-            image:'',
+            image:'assets/icons/flat.svg',
             amount:'$9000',
             category: 'flat',
             reviews: 4,

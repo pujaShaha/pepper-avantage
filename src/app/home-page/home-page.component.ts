@@ -26,7 +26,6 @@ export class HomePageComponent implements OnInit {
   getPropertyDetails() {
     this._commonService.propertyInfo$.subscribe((resp:Properties[] )=> {
      if(resp) {
-      console.log('resp: ', resp);
       this.propertyInformation = resp;
      }
     }, 
@@ -41,7 +40,6 @@ export class HomePageComponent implements OnInit {
   }
 
   editPropertyDetails(property: Properties){
-    console.log('property details', property);
     this._router.navigateByUrl('/property-form');
   }
 

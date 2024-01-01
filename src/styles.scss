@@ -41,3 +41,38 @@ body { margin: 0; font-family: 'Halis R', sans-serif; }
 	border: 1px solid #da1e28 !important;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 8px;
+  height: 8px;
+  background: var(--scroller-color-2, #f6f8fc);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  background: #BDBDBD;
+}
+
+.scrollbar {
+  &::-webkit-scrollbar {
+
+      width: 0px;
+      height: 8px;
+      background-color: var(--theme-text-color-01);
+      border-color: var(--scroller-color-1);
+      border-width: 0px 0.5px;
+      border-style: solid;
+      border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: var(--scroller-thumb-color-1);
+      border-radius: 8px;
+      background-clip: padding-box;
+      border-top: 2px solid var(--transparent-background);
+      border-bottom: 2px solid var(--transparent-background);
+  }
+}
+
