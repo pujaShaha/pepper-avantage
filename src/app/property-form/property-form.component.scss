@@ -2,6 +2,10 @@
 @import '../../assets/styles/mixins.scss';
 
 .form-container {
+    .content-container{
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+    }
     .header-section{
         .back-btn{
             padding: 30px 250px;
